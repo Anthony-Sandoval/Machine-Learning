@@ -1,0 +1,56 @@
+import pandas as pd
+import os
+import numpy as np
+import sqlite3 as sq3
+import pandas.io.sql as pds
+import requests
+import certifi
+import pylab
+import matplotlib.pyplot as plt
+filepath_Crypto = "ETH_BTC.csv"
+Crypto_data = pd.read_csv(filepath_Crypto)
+Crypto_data
+Crypto_data.columns
+print(Crypto_data.shape[0])
+
+print(Crypto_data.dtypes)
+Crypto_data = Crypto_data.rename(columns={'BTC / USD Denominated Closing Price': 'BTC'})
+Crypto_data = Crypto_data.rename(columns={ 'BTC / Realized Market Cap (USD)': 'BTC_Market_Cap'})
+Crypto_data = Crypto_data.rename(columns={ 'BTC / ROI, 1 Year': 'BTC ROI'})
+Crypto_data = Crypto_data.rename(columns={ 'ETH / USD Denominated Closing Price': 'ETH'})
+Crypto_data = Crypto_data.rename(columns={ 'ETH / Realized Market Cap (USD)': 'ETH_Market_Cap'})
+Crypto_data = Crypto_data.rename(columns={ 'ETH / ROI, 1 Year': 'ETH ROI'})
+print(Crypto_data.columns.tolist())
+import matplotlib.pyplot as plt
+%matplotlib inline
+Crypto_data['Time'] = data.Time.str.replace('/2022', '')
+ax = plt.axes()
+ax.scatter(Crypto_data.Time, Crypto_data.ETH)
+ax.set(xlabel='Date',
+       ylabel='ETH (USD)',
+       title='2022'); 
+Crypto_data['Time'] = data.Time.str.replace('/2022', '')
+ax = plt.axes()
+
+ax.scatter(Crypto_data.Time, Crypto_data.BTC)
+ax.set(xlabel='Date',
+       ylabel='BTC (USD)',
+       title='2022');
+       ax = plt.axes()
+
+ax.scatter(Crypto_data.ETH, Crypto_data.BTC)
+
+ax.set(xlabel='ETH (USD)',
+       ylabel='BTC (USD)',
+       title='BTC vs ETH');
+       ax = plt.axes()
+ax.scatter(Crypto_data.ETH_Market_Cap, Crypto_data.BTC_Market_Cap)
+
+ax.set(xlabel='ETH Market Cap (USD)',
+       ylabel='BTC Market Cap (USD)',
+       title='BTC vs ETH');
+       
+sns.set_context('notebook')
+sns.pairplot(Crypto_data, hue='Time');
+       
+       
