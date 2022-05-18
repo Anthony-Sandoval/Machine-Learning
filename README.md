@@ -1,5 +1,5 @@
 # Machine-Learning
-Sampling
+ETH vs BTC Correlation or Causation
 Anthony Sandoval
 
 Data Set and summary of attributes:
